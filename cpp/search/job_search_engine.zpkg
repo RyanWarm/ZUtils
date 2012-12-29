@@ -1,0 +1,12 @@
+name:   job_search_engine
+version: 0.0.1
+
+files:
+  search_engine:  /usr/local/job_search_engine/job_search_engine_prod
+  conf: /usr/local/job_search_engine/conf
+  start_job_engine.sh: /usr/local/job_search_engine/start.sh
+
+user: tinybee
+start: /usr/local/job_search_engine/start.sh
+
+

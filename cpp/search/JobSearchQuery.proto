@@ -1,0 +1,32 @@
+package job_search;
+message PbJobSearchQuery{
+    message TermExpansion{
+        required bytes term = 1;
+        repeated bytes eterm = 2;
+    }
+   
+    optional int32 offset = 1;
+    optional int32 count = 2;
+    
+    required bytes xapian_query_blob = 3; 
+    
+    optional int64 searcher_uid = 5;
+    repeated int64 d1_uid = 6;
+    repeated int64 d2_uid = 7;
+    
+    repeated TermExpansion te = 8;
+    
+    optional int32 search_type = 9; //normal_search 1, jd_matching 2, user_matching 3
+    
+    repeated uint64 stats_com_term = 13;  //reserved terms for stats
+    repeated uint64 stats_job_term = 14;
+    repeated uint64 stats_tag_term = 15;
+    repeated uint64 stats_sch_term = 16;
+
+    optional int32 task_type = 17;     
+    
+    optional bool debug = 18;
+}
+
+
+

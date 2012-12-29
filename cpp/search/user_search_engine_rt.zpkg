@@ -1,0 +1,11 @@
+name:   user_search_engine_rt
+version: 0.0.1
+
+files:
+  search_engine:  /usr/local/user_search_engine_rt/user_search_engine
+  conf: /usr/local/user_search_engine_rt/conf
+
+user: tinybee
+start: /usr/local/user_search_engine_rt/user_search_engine --port 20008 --index-dir /home/tinybee/user_rt_index_db/ --server-type user --mongodb-addr uc06:27017 --contacts-company-file /usr/local/user_search_engine_rt/conf/contacts_company_name
+
+

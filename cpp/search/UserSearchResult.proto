@@ -1,0 +1,20 @@
+package user_search;
+message UserSearchResult{
+    message ResultItem{
+        optional int64 uid = 1;
+        optional double score = 2;
+        optional int32 link_distance = 3;
+        optional bytes debug_data = 4;
+    }
+    message StatsItem{
+        optional bytes stats_type = 1;
+        optional uint64 stats_key = 2;
+        optional bytes stats_name = 4;
+        optional uint64 stats_value = 3;
+    }
+    optional int32 offset = 1;
+    optional int32 count = 2;
+    optional int32 total_estimated = 3; 
+    repeated ResultItem result_item = 4;
+    repeated StatsItem stats_item = 5;
+}

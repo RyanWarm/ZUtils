@@ -1,0 +1,12 @@
+name:   user_search_engine
+version: 0.0.1
+
+files:
+  search_engine:  /usr/local/user_search_engine/user_search_engine
+  conf: /usr/local/user_search_engine/conf
+  start_user_engine.sh: /usr/local/user_search_engine/start.sh
+
+user: tinybee
+start: /usr/local/user_search_engine/start.sh
+
+

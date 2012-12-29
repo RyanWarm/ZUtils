@@ -1,0 +1,26 @@
+package job_search;
+message JobSearchResult{
+    message ResultItem{
+        optional int64 jid = 1;
+        optional double score = 2;
+        optional bytes title = 3;
+        optional bytes location = 4;
+        optional int64 company_id = 5;
+        optional bytes company_name = 6;
+        optional bytes company_image = 7;
+        optional bytes department = 8;
+        optional int64 post_date = 9;
+        optional bytes debug_data = 10;
+    }
+    message StatsItem{
+        optional bytes stats_type = 1;
+        optional uint64 stats_key = 2;
+        optional bytes stats_name = 4;
+        optional uint64 stats_value = 3;
+    }
+    optional int32 offset = 1;
+    optional int32 count = 2;
+    optional int32 total_estimated = 3; 
+    repeated ResultItem result_item = 4;
+    repeated StatsItem stats_item = 5;
+}

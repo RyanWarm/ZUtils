@@ -1,0 +1,12 @@
+name:   user_search_engine_dev
+version: 0.0.1
+
+files:
+  search_engine:  /usr/local/user_search_engine_dev/user_search_engine_dev
+  conf: /usr/local/user_search_engine_dev/conf
+  start_user_engine_dev.sh: /usr/local/user_search_engine_dev/start.sh
+
+user: tinybee
+start: /usr/local/user_search_engine_dev/start.sh
+
+
