@@ -4,14 +4,14 @@ dp = {}
 
 def calc(inp, length, index, pre):
 	global dp
-
-	if index == 0:
-		pre_value = inp[0]
-	else:
-		pre_value = dp[pre]
+	pre_value = dp[pre]
 	
-	if index == (length-1) and pre_value == inp[len(inp)-1]:
-		print "matching: " + pre
+	if index == (length-1):
+		if pre_value == inp[len(inp)-1]:
+			result = str(inp[0])
+			for i in range(1,length):
+				result += pre[i] + str(inp[i])
+			print "matching: " + result + "=" + str(inp[length])
 		return
 	
 	# "+"
@@ -27,21 +27,34 @@ def calc(inp, length, index, pre):
 	last = pre[len(pre)-1]
 	# "*"
 	nex = pre + '*'
-	if last == '*' or last == '/':
+	if last == '*' or last == '/' or last == '$':
 		dp[nex] = pre_value * inp[index+1]
 	else:
-		pre_value = dp[pre[:len(pre)-2]]
-		dp[nex] = 
+		pre_value = dp[pre[:len(pre)-1]]
+		if last == '+':
+			dp[nex] = pre_value + inp[index] * inp[index+1]
+		else:
+			dp[nex] = pre_value - inp[index] * inp[index+1]
 	calc(inp, length, index+1, nex)
 
-	# "+"
-	nex = pre + '+'
-	dp[nex] = pre_value + inp[index+1]
+	# "/"
+	if inp[index+1] == 0:
+		return
+	nex = pre + '/'
+	if last == '*' or last == '/' or last == '$':
+		dp[nex] = pre_value / inp[index+1]
+	else:
+		pre_value = dp[pre[:len(pre)-1]]
+		if last == '+':
+			dp[nex] = pre_value + inp[index] / inp[index+1]
+		else:
+			dp[nex] = pre_value - inp[index] / inp[index+1]
 	calc(inp, length, index+1, nex)
-
 
 if __name__ == "__main__":
-	inp = [1,2,3,4]
+	inp = [2,1,3,4,5,8]
 	length = len(inp) - 1
-
+	pre = '$'
+	dp[pre] = inp[0]
+	calc(inp, length, 0, pre)
 
