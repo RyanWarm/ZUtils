@@ -6,6 +6,7 @@ M = -1
 def process(n,m):
     global dp,N,M
     if dp[n][m] != 0:
+    	print "=====match=======:" + str(n) + "," + str(m)
         return dp[n][m]
     base = pow(M,m)
     k = m
