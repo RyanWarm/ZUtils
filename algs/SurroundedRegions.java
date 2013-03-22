@@ -73,31 +73,43 @@ public class SurroundedRegions {
     }
 
     public static void main( String[] argv ) {
-	char[][] input = new char[4][4];
+	char[][] input = new char[5][5];
 	input[0][0] = 'X';
 	input[0][1] = 'X';
 	input[0][2] = 'X';
 	input[0][3] = 'X';
+	input[0][4] = 'O';
 	input[1][0] = 'X';
 	input[1][1] = 'O';
 	input[1][2] = 'O';
 	input[1][3] = 'X';
+	input[1][4] = 'O';
 	input[2][0] = 'X';
 	input[2][1] = 'X';
 	input[2][2] = 'O';
 	input[2][3] = 'X';
+	input[2][4] = 'O';
 	input[3][0] = 'X';
-	input[3][1] = 'O';
-	input[3][2] = 'X';
-	input[3][3] = 'X';
-        for( int i = 0; i < 4; i++ ) {
-            for( int j = 0; j < 4-1; j++ ) {
+	input[3][1] = 'X';
+	input[3][2] = 'O';
+	input[3][3] = 'O';
+	input[3][4] = 'X';
+	input[4][0] = 'X';
+	input[4][1] = 'X';
+	input[4][2] = 'X';
+	input[4][3] = 'X';
+	input[4][4] = 'O';
+        for( int i = 0; i < 5; i++ ) {
+            for( int j = 0; j < 5-1; j++ ) {
                 System.out.print(input[i][j]+" ");
             }
-            System.out.println(input[i][4-1]);
+            System.out.println(input[i][5-1]);
         }
+        System.out.println("----------------");
 
+	char[][] a = new char[1][1];
+	a[0][0] = 'X';
 	SurroundedRegions solution = new SurroundedRegions();
-	solution.solve(input);
+	solution.solve(a);
     }
 }

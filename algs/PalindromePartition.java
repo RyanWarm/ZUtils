@@ -1,4 +1,6 @@
-public class Solution {
+import java.util.ArrayList;
+
+public class PalindromePartition {
     public ArrayList<ArrayList<String>> partition(String s) {
         ArrayList<ArrayList<String>> result = new ArrayList<ArrayList<String>>();
         int len = s.length();

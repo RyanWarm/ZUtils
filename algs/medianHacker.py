@@ -80,15 +80,33 @@ if __name__=="__main__":
 						print float(tmp)/2
 			elif val in vals_l:
 				del vals_l[vals_l.index(val)]
-				ext_val = vals_r[0]
-				del vals_r[0]
-				size -= 1
-				print ext_val
+				if ext_val == -1:
+					ext_val = vals_r[0]
+					del vals_r[0]
+					size -= 1
+					print ext_val
+				else:
+					vals_l.append(ext_val)
+					ext_val = -1
+					tmp = vals_l[size-1]+vals_r[0]
+					if tmp % 2 == 0:
+						print tmp/2
+					else:
+						print float(tmp)/2
 			elif val in vals_r:
 				del vals_r[vals_r.index(val)]
-				ext_val = vals_l[size-1]
-				del vals_l[size-1]
-				size -= 1
-				print ext_val
+				if ext_val == -1:
+					ext_val = vals_l[size-1]
+					del vals_l[size-1]
+					size -= 1
+					print ext_val
+				else:
+					vals_r.insert(0,ext_val)
+					ext_val = -1
+					tmp = vals_l[size-1]+vals_r[0]
+					if tmp % 2 == 0:
+						print tmp/2
+					else:
+						print float(tmp)/2
 			else:
 				print 'Wrong!'
