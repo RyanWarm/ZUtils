@@ -1,5 +1,10 @@
 #include <iostream>
 using namespace std;
+
+/**
+ * Solution of following problem:
+ * Print out all valid combinations of n-pair parentheses
+ */
 void doGeneration(int n, int left, int right, char *r) {
 	//cout << "inside: " << left << "," << right << "," << r << endl;
 	if( left + right == n*2 ) {
