@@ -15,12 +15,13 @@ public:
 			int c_map[26];
 			for( int i = 0; i < 26; i++ ) c_map[i] = 0;
 			string tmp = *it;
+			cout << tmp.length() << endl;
 			for( int i = 0; i < tmp.length(); i++ ) {
 				c_map[tmp[i]-'a']++;
 			}
 			key = "";
-			char bufi[2];
-			char bufc[25];
+			char bufi[10];
+			char bufc[10];
 			for( int i = 0; i < 26; i++ ) {
 				if( c_map[i] > 0 ) {
 					sprintf(bufi, "%d", i);
@@ -30,10 +31,13 @@ public:
 			}
 			vector<string> tmp_r;
 			if( str_map.find(key) != str_map.end() ) {
+				cout << "create" << endl;
 				tmp_r = str_map[key];
 			}
 			tmp_r.push_back(tmp);
+			cout << "size: " << tmp_r.size() << endl;
 			str_map[key] = tmp_r;
+			cout << "size_m: " << str_map.size() << endl;
 		}
 
 		vector<string> result;
@@ -47,12 +51,11 @@ public:
 
 int main() {
 	vector<string> strs;
-	strs.push_back("ant");
-	strs.push_back("ant");
+	strs.push_back("");
 	Solution s;
 	vector<string> result = s.anagrams(strs);
 	for( vector<string>::iterator it = result.begin(); it != result.end(); it++ ) {
-		cout << *it << endl;
+		cout << (string)*it << endl;
 	}
 	return 1;
 }
