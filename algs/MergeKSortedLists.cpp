@@ -72,9 +72,15 @@ public:
         int k = lists.size();
 		if( k == 0 ) return NULL;
 		ListNode *result = NULL, *cur = NULL;
-		int heap[k];
+		int heap[k], size = 0;
 		for( vector<ListNode *>::iterator it = lists.begin(); it != lists.end(); ++it ) {
 			ListNode *tmp = *it;
+			heap[size] = tmp->val;
+			heapUp(heap, size);
+			size++;
+		}
+		while( size > 0 ) {
+			
 		}
     }
 };
