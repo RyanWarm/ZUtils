@@ -1,0 +1,28 @@
+message Job{
+	required int32 id = 1;
+    required int32 zid = 2;
+    required bytes title = 3;
+    required int32 company_id = 4;
+    required int64 post_date = 5;
+    required bytes description = 6;
+    optional bytes location = 7;
+    optional int32 headcount = 8;
+    optional int32 exp_year_min = 9;
+    optional int32 exp_year_max = 10;
+    optional bytes url = 11;
+    optional bytes email = 12;
+    optional bytes type = 13;
+    optional bytes edu_background = 14;
+    optional int32 salary_min = 15;
+    optional int32 salary_max = 16;
+    repeated bytes category = 17;
+    optional bytes department = 18;
+    optional bytes management_exp = 19;
+    optional bytes status = 20;
+    optional int64 expire_time = 21;
+    optional int64 modified_time = 22;
+    optional int32 grade = 23;
+    optional bytes requirement = 24;
+}
+
+

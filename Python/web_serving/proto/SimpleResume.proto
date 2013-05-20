@@ -1,0 +1,20 @@
+message SimpleResume{
+    required int32 zid = 1;
+    optional int32 wid = 2;
+    optional bytes name = 3;
+
+    optional bytes location = 4;
+    optional bytes url = 5;
+    optional bytes summary = 6;
+    optional bytes image = 7;
+    optional bytes headline = 9;
+    optional bytes specialties = 10;
+    optional bytes tags = 11;
+    optional bytes email = 12;
+    optional bytes phone = 13;
+    optional bool  gender = 14;
+    optional bytes hometown = 15;
+}
+
+
+

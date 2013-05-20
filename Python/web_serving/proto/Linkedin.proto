@@ -1,0 +1,48 @@
+package linkedinprofile;
+
+message LinkedinProfile{
+    message PersonalInfo{
+        optional bytes img = 1;
+        required bytes name = 2;
+        optional bytes url = 3;
+        optional bytes location = 4;
+        optional bytes industry = 5;
+        optional int32 connections = 6;
+        optional int32 gender = 7; 
+        optional bytes birthday = 8;
+        optional bytes email = 9;
+        optional bytes blog = 10;
+        optional bytes contact = 11;
+        optional bytes hometown = 12;
+    }
+    message HisData{
+        message Education{
+            required bytes name = 1;
+            optional int32 year_s = 2;
+            optional int32 year_e = 3;
+            optional bytes major = 4;
+            optional bytes degree = 5;
+            optional bytes description = 6;
+        }
+        message Company{
+            required bytes name = 1;
+            optional int32 year_s = 2;
+            optional int32 year_e = 3;
+            optional bytes position = 4;
+            optional bytes location = 5;
+            optional bytes description = 6;
+        }
+        repeated Education edu = 1;
+        repeated Company com = 2;
+    }
+    required int64 uid = 1;
+    optional PersonalInfo personal_info = 2;
+    optional HisData his_data = 3;
+    optional bytes overview = 4;
+    optional bytes speciality = 5;
+    repeated bytes tag = 6;
+    repeated bytes ftag = 7;
+    optional bytes headline = 8;
+    optional bytes orig_uid = 9;
+}
+
