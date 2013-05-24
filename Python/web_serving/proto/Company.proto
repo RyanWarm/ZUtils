@@ -1,0 +1,16 @@
+message Company{
+    optional int32 id = 1;
+    optional int32 zid = 2;
+    required bytes name = 15;
+    optional bytes image = 4;
+    optional bytes overview = 5;
+    optional int32 employer_count = 6;
+    optional int32 follower_count = 7;
+    optional int32 score = 8;
+    optional bytes url = 9;
+    optional bytes location = 10;
+    optional bytes category = 11;
+    optional bytes property = 12;
+    optional bytes scale = 13;
+    optional bytes cities = 14;
+}

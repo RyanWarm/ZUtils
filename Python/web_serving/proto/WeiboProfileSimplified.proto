@@ -1,0 +1,14 @@
+message WeiboProfileSimplified{
+    optional bytes img = 1;
+    optional bytes name = 2;
+    optional int32 gender = 3;
+    optional bytes location = 4;
+    optional int32 birth_year = 5;
+    optional bytes school = 6;
+    optional bytes major = 7;
+    optional bytes company = 8;
+    optional bytes position = 9;
+    optional bytes verified_title = 10;
+    optional int64 uid = 11;
+}
+

@@ -1,0 +1,110 @@
+package resumeinfo;
+
+message ResumeInfo{
+    message PersonalInfo{
+        optional bytes img = 1;
+        required bytes name = 2;
+        optional bytes url = 3;
+        optional bytes location = 4;
+        optional bytes industry = 5;
+        optional int32 connections = 6;
+        optional int32 gender = 7; 
+        optional bytes birthday = 8;
+        optional bytes email = 9;
+        optional bytes blog = 10;
+        optional bytes contact = 11;
+        optional bytes hometown = 12;
+    }
+    message IntentJob{
+        optional bytes reg_time = 1;
+        optional bytes job_type = 2;
+        optional int32 exp_salary = 3;
+        optional bytes exp_position = 4;
+        optional bytes exp_industry = 5;
+        optional bytes exp_location = 6;
+    }
+    message HisData{
+        message Education{
+            required bytes name = 1;
+            optional int32 year_s = 2;
+            optional int32 year_e = 3;
+            optional bytes major = 4;
+            optional bytes degree = 5;
+            optional bytes description = 6;
+        }
+        message HighestEdu{
+            required bytes college = 1;
+            optional bytes major = 2;
+            optional bytes degree = 3;
+        }
+        message Company{
+            required bytes name = 1;
+            optional int32 year_s = 2;
+            optional int32 year_e = 3;
+            optional bytes category = 4;
+            optional bytes department = 5;
+            optional bytes position = 6;
+            optional bytes location = 7;
+            optional bytes description = 8;
+            optional bytes achivement = 9;
+        }
+        message LatestCom{
+            required bytes name = 1;
+            optional int32 year_s = 2;
+            optional int32 year_e = 3;
+            optional bytes category = 4;
+            optional bytes position = 5;
+        }
+        message Project{
+            required bytes name = 1;
+            optional bytes time = 2;
+            optional bytes software = 3;
+            optional bytes hardware = 4;
+            optional bytes responsibility = 5;
+            optional bytes tools = 6;
+            optional bytes description = 7;
+        }
+        message Training{
+            required bytes course = 1;
+            optional bytes time = 2;
+            optional bytes organization = 3;
+            optional bytes certificate = 4;
+            optional bytes description = 5;
+        }
+        repeated Education edu = 1;
+        optional HighestEdu highest_edu = 2;
+        repeated Company com = 3;
+        optional LatestCom latest_com = 4;
+        repeated Project project = 5;
+        repeated Training training = 6;
+    }
+    message Certificate{
+        required bytes name = 1;
+        required bytes time = 2;
+        optional double score = 3;
+    }
+    message Language{
+        required bytes type = 1;
+        optional bytes description = 2;
+    }
+    message IT_Skill{
+        required bytes name = 1;
+        optional bytes description = 2;
+        optional bytes time = 3;
+    }
+    required int64 uid = 1;
+    optional PersonalInfo personal_info = 2;
+    optional HisData his_data = 3;
+    optional bytes overview = 4;
+    optional bytes speciality = 5;
+    repeated bytes tag = 6;
+    repeated bytes ftag = 7;
+    optional bytes headline = 8;
+    optional bytes orig_uid = 9;
+    optional IntentJob intent_job = 10;
+    repeated bytes keyword = 11;
+    optional bytes brief = 12;
+    repeated Certificate certificate = 13;
+    repeated Language language = 14;
+    repeated IT_Skill it_skill = 15;
+}

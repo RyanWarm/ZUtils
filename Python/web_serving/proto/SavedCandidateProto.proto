@@ -1,0 +1,14 @@
+message BasicJobProto {
+    required int32 id = 1;
+    required bytes title = 2; 
+}
+message SavedCandidateProto {
+    required int32 zid = 1;
+    required bytes network = 2;
+    required bytes profile_id = 3;
+    required int64 saved_time = 4;
+    optional bytes notes = 5;
+    repeated BasicJobProto job = 6; 
+    optional bytes status = 7;
+}
+

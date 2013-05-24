@@ -1,0 +1,14 @@
+message CandidateNoteProto {
+    required int32 zid = 1;
+    required bytes network = 2;
+    required bytes profile_id = 3;
+
+    optional int64 created_time = 4;
+    optional int64 modified_time = 5; 
+    
+    optional bytes name = 6;
+    optional bytes company = 7;
+    optional bytes job_position = 8;
+    optional bytes comment = 9;
+}
+

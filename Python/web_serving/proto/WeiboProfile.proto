@@ -1,0 +1,57 @@
+package weiboprofile;
+
+message WeiboProfile{
+    message PersonalInfo{
+        optional bytes img = 2;
+        optional bytes name = 3;
+        optional bool daren = 4;
+        optional bool blue_v = 5;
+        optional bool yellow_v = 6;
+        optional int32 level = 7;
+        optional bytes url = 8;
+        optional bool gender = 9;
+        optional bytes location = 10;
+        optional bytes words = 11;
+	optional int32 gender2 = 12;
+    }
+    message HisData{
+        message BasicInfo{
+            optional bytes birthday = 1;
+            optional bytes email = 2;
+        }
+        message Education{
+            required bytes name = 1;
+            optional int32 year = 2;
+            optional bytes major = 3;
+        }
+        message Company{
+            required bytes name = 1;
+            optional int32 year_s = 2;
+            optional int32 year_e = 3;
+            optional bytes position = 4;
+            optional bytes location = 5;
+        }
+        optional BasicInfo bi = 1;
+        repeated Education edu = 2;
+        repeated Company com = 3;
+    }
+    message LitePersonalInfo{
+        optional bytes daren_title = 1;
+        optional bytes interest = 2;
+        optional int32 jifen = 3;
+        optional bytes verify_title = 4;
+        optional int32 follow = 5;
+        optional int32 fans = 6;
+        optional int32 tweets = 7;
+    }
+    required int64 uid = 1;
+    optional PersonalInfo personal_info = 2;
+    optional HisData his_data = 3;
+    optional LitePersonalInfo lite_personal_info = 4;
+    repeated bytes medal = 5;
+    repeated bytes tag = 6;
+    repeated bytes ftag = 7;
+    optional bytes headline = 8;
+    optional bytes guess_company = 9;
+}
+

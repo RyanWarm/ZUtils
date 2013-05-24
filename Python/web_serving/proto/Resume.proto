@@ -1,0 +1,39 @@
+import "SimpleResume.proto";
+
+message Education{
+    required int32 school_id = 1;
+    required bytes school_name = 2;
+    optional bytes year_s = 3;
+    optional bytes year_e = 4;
+    optional bytes major = 5;
+    optional bytes degree = 6;
+}
+
+message Work{
+    required int32 company_id = 1;
+    required bytes company_name = 2;
+    optional bytes year_s = 3;
+    optional bytes year_e = 4;
+    optional bytes position = 5;
+    optional bytes description = 6;
+}
+
+message Endorsement{
+    required int32 zid  = 1;
+    required bytes content = 2;
+    required bytes date = 3;
+}
+
+message Resume{
+    required SimpleResume basic_info = 1;
+    repeated Education education = 2;        
+    repeated Work work = 3;
+    repeated Endorsement endorsement = 4;
+    optional bool basic_info_filled = 5;
+    optional bool education_filled = 6;
+    optional bool work_filled = 7;
+    optional int32 indexable = 8;
+}
+
+
+
