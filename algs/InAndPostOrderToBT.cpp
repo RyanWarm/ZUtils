@@ -36,7 +36,7 @@ public:
         if( i >= start ) {
             //left child
             result->left = new TreeNode(postorder[i]);
-            doConstruct(inMap, postorder, result->left, inMap[postorder[i]], 0, i-1);
+			if( i > start ) doConstruct(inMap, postorder, result->left, inMap[postorder[i]], start, i-1);
         }
     }
     TreeNode *buildTree(vector<int> &inorder, vector<int> &postorder) {
