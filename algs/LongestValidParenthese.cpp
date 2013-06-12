@@ -9,29 +9,28 @@ public:
         // DO NOT write int main() function
         int len = s.length();
         if( len == 0 ) return 0;
-        int ps = 0, pe = 0, tmp = 0, result = 0;
-        while( ps < len ) {
-			cout << s << ", ps: " << ps << endl;
-            if( s[ps] == ')' ) {
-                ps++;
-                tmp = 0;
-                len = s.length();
+        stack<int> ts;
+        int val[len];
+        for( int i = 0; i < len; i++ ) {
+            if( s[i] == '(' ) {
+                ts.push(i);
+                val[i] = 0;
             } else {
-                pe = ps + 1;
-                if( pe < len ) {
-					if( s[pe] == ')' ) {
-                    	tmp++;
-                    	s.erase(ps,2);
-                    	len = s.length();
-                    	if( ps > 0 ) ps--;
-                	} else if( s[pe] == '(' ) {
-                    	ps++;
-                	}
-				} else break;
-                if( tmp != 0 ) {
-                    int t = tmp * 2;
-                    result = t > result ? t : result;
+                if( ts.empty() ) {
+                    val[i] = 0;
+                    continue;
                 }
+                int pre = ts.top();
+                ts.pop();
+                val[i] = i - pre + 1;
+            }
+        }
+        int result = 0;
+        for( int i = 0; i < len; i++ ) {
+            if( val[i] != 0 ) {
+                int tmp = i - val[i];
+                if( tmp >= 0 && val[tmp] != 0 ) val[i] += val[tmp];
+                if( val[i] > result ) result = val[i];
             }
         }
         return result;
